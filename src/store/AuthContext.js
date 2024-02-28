@@ -55,7 +55,12 @@ const AuthContextProvider = (props) => {
   useEffect(() => {
     let localData = getLocalData();
     if (localData) {
-      dispatch({ type: "RETURNING_USER", payload: localData });
+      if(+localData.exp < Date.now()) {
+        localStorage.clear()
+      } else {
+        dispatch({ type: "RETURNING_USER", payload: localData });
+      }
+      
     }
   }, []);
 

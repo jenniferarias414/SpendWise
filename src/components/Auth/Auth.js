@@ -3,6 +3,7 @@ import axios from "axios";
 import AuthContext from "../../store/AuthContext.js";
 import Card from '../UI/Card.js';
 import './Auth.css';
+import logo from '../../images/20210430_budgetz.png';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -29,26 +30,31 @@ const Auth = () => {
 
   return (
     <main className="main">
-    <h1>Welcome to SpendWise!</h1>
-    <h2>here's a cool logo</h2>
-    <Card className="card">
-      <form className="form auth-form" onSubmit={submitHandler}>
-        <input
-          placeholder="Username"
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          placeholder="Password"
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button>{register ? "Sign Up" : "Login"}</button>
-      </form>
-      <button className="switch-btn" onClick={() => setRegister(!register)}>
-        Need to {register ? "Login" : "Sign Up"}?
-      </button>
-    </Card>
-  </main>
+      <div className="header">
+        <img src={logo} alt="Logo" />
+        <div className="content">
+          <h1>Welcome to SpendWise!</h1>
+          <h2>It's wise to be organized.</h2>
+        </div>
+      </div>
+      <Card className="card auth">
+        <form className="form auth-form" onSubmit={submitHandler}>
+          <input
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            placeholder="Password"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button>{register ? "Sign Up" : "Login"}</button>
+        </form>
+        <button className="switch-btn" onClick={() => setRegister(!register)}>
+          Need to {register ? "Login" : "Sign Up"}?
+        </button>
+      </Card>
+    </main>
   );
 };
 
