@@ -4,6 +4,9 @@ import Auth from './components/Auth/Auth.js';
 import App from './App.js';
 import AuthContext from './store/AuthContext.js';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const Router = () => {
@@ -20,7 +23,10 @@ const Router = () => {
         }
     ])
     return (
+        <>
         <RouterProvider router={router} />
+        <ToastContainer />
+        </>
     )
 }
 export default Router

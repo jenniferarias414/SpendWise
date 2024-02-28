@@ -32,7 +32,7 @@
       font: inherit;
       cursor: pointer;
       padding: 1rem 2rem;
-      border: 1px solid white;
+      border: 1px solid #40005d;
       background-color: #40005d;
       color: white;
       border-radius: 12px;
@@ -42,7 +42,7 @@
   .auth button:hover,
   .auth button:active {
       background-color: #510674;
-      border-color: white;
+      border-color: #40005d;
   }
 
   .auth button.alternative {
@@ -61,8 +61,8 @@
       cursor: pointer;
       justify-content: center;
       text-align: center;
-      
-      /* font-style: italic; */
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
   }
 
   .switch-btn:hover {
@@ -92,7 +92,7 @@
       font: inherit;
       cursor: pointer;
       padding: 1rem 2rem;
-      border: 1px solid white;
+      border: 1px solid #40005d;
       background-color: #40005d;
       color: white;
       border-radius: 12px;
