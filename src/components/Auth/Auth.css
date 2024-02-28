@@ -143,8 +143,10 @@
   }
   
   h3 {
-    margin-left: 50px;
+    margin-left: 70px;
     color: white;
+    /* display: flex;
+    text-align: center; */
   }
   
 
