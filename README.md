@@ -22,3 +22,5 @@ Expense Tracker is an app that allows a user to create an account, log in, add e
 - pg
 - pg-hstore
 - dotenv
+- jwt
+- bcrypt
