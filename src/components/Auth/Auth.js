@@ -53,6 +53,7 @@ const Auth = () => {
         <button className="switch-btn" onClick={() => setRegister(!register)}>
           Need to {register ? "Login" : "Sign Up"}?
         </button>
+        <h6>It's free to sign up. Enjoy some coffee while you're at it.</h6>
       </Card>
 
       <section>
