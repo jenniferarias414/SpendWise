@@ -1,5 +1,6 @@
 import express from 'express';
 import {register, login} from './controllers/auth.js';
+import {fetchExpenses, addExpense} from './controllers/expense.js';
 import { isAuthenticated } from "./middleware/isAuthenticated.js";
 import {sequelize} from './util/database.js';
 import {User} from './models/user.js';
@@ -15,7 +16,8 @@ app.post('/register', register);
 app.post('/login', login);
 
 //expenses
-app.get('/')
+app.post('/expenses', addExpense);
+app.get('/expenses/:userId', fetchExpenses);
 
 
 

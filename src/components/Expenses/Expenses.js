@@ -7,7 +7,7 @@ import ExpensesList from './ExpensesList.js';
 import ExpensesChart from './ExpensesChart.js';
 
 function Expenses(props){
-  const [filteredYear, setFilteredYear] = useState('2020');
+  const [filteredYear, setFilteredYear] = useState('2024');
 
   // let filterInfoText = '2019, 2021 & 2022';
 
@@ -24,7 +24,7 @@ function Expenses(props){
   };
 
   const filteredExpenses = props.items.filter((expense) => {
-    return expense.date.getFullYear().toString() === filteredYear
+    return new Date(expense.date).getFullYear().toString() === filteredYear
   });
 
     return (
