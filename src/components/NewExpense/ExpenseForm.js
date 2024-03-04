@@ -4,7 +4,15 @@ import './ExpenseForm.css';
 const ExpenseForm = (props) => {
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
-    const [enteredDate, setEnteredDate] = useState('');
+    const [enteredDate, setEnteredDate] = useState(getTodayDate());
+
+    function getTodayDate() {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const day = String(today.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+  }
 
     // const [userInput, setUserInput] = useState({
     //     enteredTitle: '',
@@ -51,7 +59,7 @@ const ExpenseForm = (props) => {
         props.onSaveExpenseData(expenseData); //child-to-parent component communication (bottom up)
         setEnteredTitle('');
         setEnteredAmount('');
-        setEnteredDate('');
+        setEnteredDate(getTodayDate());
     };
 
   return (
@@ -68,7 +76,7 @@ const ExpenseForm = (props) => {
         </div>
         <div className="new-expense__control">
           <label>Date</label>
-          <input type="date" min="2019-01-01" max="2022-12-31" value={enteredDate} onChange={dateChangeHandler} />
+          <input type="date" min="2019-01-01" max={getTodayDate()} value={enteredDate} onChange={dateChangeHandler} />
         </div>
       </div>
       <div className='new-expense__actions'>

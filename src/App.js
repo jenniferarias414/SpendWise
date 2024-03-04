@@ -1,5 +1,5 @@
 //'root' component, top of the component tree
-import React, {useState, useEffect, useRef, useContext} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import NewExpense from './components/NewExpense/NewExpense.js';
 import Expenses from './components/Expenses/Expenses.js';
 import Header from './components/Header.js';
@@ -35,9 +35,9 @@ import axios from 'axios';
 function App() {
   const {state} = useContext(AuthContext);
   const [expenses, setExpenses] = useState([]);
-  const titleRef = useRef();
-  const amountRef = useRef();
-  const dateRef = useRef();
+  // const titleRef = useRef();
+  // const amountRef = useRef();
+  // const dateRef = useRef();
 
   useEffect(() => {
     fetchExpenses();
@@ -74,19 +74,7 @@ axios
       console.error(error);
     });
 
-    // try {
-    //   const response = await fetch('/expenses', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(expenseData),
-    //   });
-    //   const data = await response.json();
-    //   setExpenses((prevExpenses) => [data, ...prevExpenses]);
-    // } catch (error) {
-    //   console.error('Error adding expense:', error);
-    // }
+    
   };
   //   setExpenses(prevExpenses => {
   //     return [expense, ...prevExpenses];
