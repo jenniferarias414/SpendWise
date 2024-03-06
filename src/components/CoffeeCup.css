@@ -3,7 +3,12 @@
     top: 50%;
     left: 90%;
     transform: translate(-50%, -50%);
+    height: 50px;
+    width: auto;
   }
+
+  
+
   .steam {
     position: absolute;
     height: 105px;
@@ -121,4 +126,10 @@
     text-align: center;
     padding-right: 20px;
     height: 30px;
+  }
+
+  @media only screen and (max-width: 1300px) {
+    #container {
+      display: none;
+    } 
   }
