@@ -41,7 +41,8 @@ function App() {
 
   useEffect(() => {
     fetchExpenses();
-  }, [fetchExpenses]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const fetchExpenses = async () => {
     try {
