@@ -41,7 +41,7 @@ function App() {
 
   useEffect(() => {
     fetchExpenses();
-  }, [expenses]);
+  }, [fetchExpenses]);
 
   const fetchExpenses = async () => {
     try {
