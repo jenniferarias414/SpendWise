@@ -29,6 +29,8 @@
     background-color: #40005d;
     color: white;
     border-radius: 8px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
   
   .header-button:hover,
