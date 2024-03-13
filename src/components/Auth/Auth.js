@@ -17,7 +17,7 @@ const Auth = () => {
     e.preventDefault();
     const body = { username, password };
     axios
-      .post(register ? "/register" : "/login", body)
+      .post(register ? "/api/register" : "/api/login", body)
       .then((res) => {
         dispatch({ type: "LOGIN", payload: res.data });
       })

@@ -46,7 +46,7 @@ function App() {
 
   const fetchExpenses = async () => {
     try {
-      const response = await fetch('/expenses/' + state.userId);
+      const response = await fetch('/api/expenses/' + state.userId);
       const data = await response.json();
       console.log(data)
       setExpenses(data);
@@ -66,7 +66,7 @@ values.userId= state.userId
 delete values.id  
 
 axios
-      .post('/expenses', values)
+      .post('/api/expenses', values)
       .then((res) => {
       console.log(res.data);
       setExpenses((prevExpenses) => [res.data, ...prevExpenses]);
